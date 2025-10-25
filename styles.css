@@ -1,0 +1,282 @@
+/* Font */
+@font-face {
+  font-family: 'Turnpike';
+  src: url('./assets/fonts/Turnpike.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Turnpike', Arial, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+  background-color: #000000;
+  border-bottom: 2px solid #ffffff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  opacity: 0.7;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 2px;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
+
+/* Page Header */
+.page-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  border-bottom: 2px solid #ffffff;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.email-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.email-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Gallery */
+.gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  background-color: #111111;
+  border: 1px solid #333333;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Content Pages */
+.content-page {
+  min-height: calc(100vh - 300px);
+  padding: 3rem 2rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.content-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 1rem;
+}
+
+.content-page h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.content-page p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.content-page a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.content-page a:hover {
+  opacity: 0.7;
+}
+
+/* CV Sections */
+
+
+/* Writing */
+.writing-entry {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333333;
+}
+
+.writing-entry h2 {
+  margin-top: 0;
+}
+
+.writing-entry .date {
+  color: #888888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Footer */
+.footer {
+  background-color: #000000;
+  border-top: 2px solid #ffffff;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer p {
+  color: #888888;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: #000000;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    padding: 2rem 0;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-header p {
+    font-size: 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .content-page h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .page-header {
+    padding: 2rem 1rem;
+  }
+
+  .gallery {
+    padding: 2rem 1rem;
+  }
+
+  .content-page {
+    padding: 2rem 1rem;
+  }
+}
+
